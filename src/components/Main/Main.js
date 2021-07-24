@@ -1,4 +1,5 @@
 import { GoTriangleDown, GoX } from 'react-icons/go';
+import { ProductForm } from 'components';
 
 import {
   Wrapper,
@@ -124,7 +125,7 @@ const Main = () => {
       </LeftColumn>
 
       <RightColumn>
-        <p>Form</p>
+        <ProductForm />
         <p>Statistics</p>
       </RightColumn>
     </Wrapper>
