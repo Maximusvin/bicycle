@@ -18,7 +18,6 @@ export const LeftColumn = styled.div`
 export const RightColumn = styled.div`
   padding-top: 55px;
   padding-left: 10px;
-  padding-right: 21.5px;
   width: 45.5%;
 `;
 

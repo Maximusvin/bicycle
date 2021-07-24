@@ -6,7 +6,7 @@ export const FormWrap = styled.form`
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 16px;
-  border-bottom: 1px solid ${COLORS.greyLine};
+  padding-right: 21.5px;
 `;
 
 export const InputForm = styled.input`
