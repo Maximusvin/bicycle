@@ -1,7 +1,7 @@
 import { ProductForm, Statistics, ProductList } from 'components';
 import { Wrapper, LeftColumn, RightColumn } from './Main.style';
 
-const Main = () => {
+const Main = ({ isLoading }) => {
   return (
     <Wrapper>
       <LeftColumn>
