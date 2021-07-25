@@ -1,10 +1,15 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Main } from 'components';
-import { fetchBicycles } from 'services/bicycles-api';
+import { fetchBicycles } from 'redux/bicycles/bicyclesOperations';
 
 export const MainView = () => {
+  const isLoading = useSelector(state => state.bicycles.loading);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchBicycles().then(res => console.log(res));
-  }, []);
-  return <Main />;
+    dispatch(fetchBicycles());
+  }, [dispatch]);
+
+  return <Main isLoading={isLoading} />;
 };
