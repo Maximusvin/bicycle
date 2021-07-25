@@ -1,12 +1,10 @@
-import { ProductForm, Statistics, ProductList } from 'components';
+import { ProductForm, Statistics, ProductList, Skeleton } from 'components';
 import { Wrapper, LeftColumn, RightColumn } from './Main.style';
 
 const Main = ({ isLoading }) => {
   return (
     <Wrapper>
-      <LeftColumn>
-        <ProductList />
-      </LeftColumn>
+      <LeftColumn>{isLoading ? <Skeleton /> : <ProductList />}</LeftColumn>
 
       <RightColumn>
         <ProductForm />
