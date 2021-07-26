@@ -3,11 +3,11 @@ import { COLORS } from 'assets/colors';
 
 const styleLoader = {
   color: COLORS.greyLine,
-  height: 80,
-  width: 80,
   type: 'ThreeDots',
 };
 
-const LoaderUI = () => <Loader {...styleLoader} />;
+const LoaderUI = ({ width = 80, height = 80 }) => (
+  <Loader {...styleLoader} width={width} height={height} />
+);
 
 export default LoaderUI;

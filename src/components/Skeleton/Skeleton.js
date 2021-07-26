@@ -10,7 +10,7 @@ import {
   CloseButton,
 } from './Skeleton.style';
 
-const skeletonItem = Array(3).fill(0);
+const skeletonItem = Array(5).fill(0);
 
 const Skeleton = () => {
   return (

@@ -1,20 +1,36 @@
+import { useSelector } from 'react-redux';
+import {
+  getAmountBicycles,
+  getAverageBikeCost,
+  getAmountAvailableBike,
+  getAmountBookedBike,
+} from 'redux/bicycles/bicyclesSelector';
 import { Wrapper, Title, Line, Span } from './Statistics.style';
 
 const Statistics = () => {
+  const totalBikes = useSelector(getAmountBicycles);
+  const averageBikeCost = useSelector(getAverageBikeCost);
+  const amountAvailable = useSelector(getAmountAvailableBike);
+  const amountBooked = useSelector(getAmountBookedBike);
+
   return (
     <Wrapper>
       <Title>Statistics</Title>
+
       <Line>
-        Total Bikes: <Span>0</Span>
+        Total Bikes: <Span>{totalBikes ? totalBikes : '-'}</Span>
       </Line>
       <Line>
-        Available Bikes: <Span>0</Span>
+        Available Bikes: <Span>{amountAvailable ? amountAvailable : '-'}</Span>
       </Line>
       <Line>
-        Booked Bikes: <Span>0</Span>
+        Booked Bikes: <Span>{amountBooked ? amountBooked : '-'}</Span>
       </Line>
       <Line>
-        Average bike cost: <Span>0.00 UAH/hr.</Span>
+        Average bike cost:
+        <Span>
+          {averageBikeCost ? averageBikeCost.toLocaleString() : '-'} UAH/hr.
+        </Span>
       </Line>
     </Wrapper>
   );

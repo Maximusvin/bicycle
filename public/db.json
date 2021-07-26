@@ -27,7 +27,7 @@
       "color": "yellow",
       "size": "15",
       "price": "10000",
-      "status": "available",
+      "status": "busy",
       "description": "ad do labore nisi qui dolore Lorem sint tempor velit"
     },
     {
@@ -37,7 +37,7 @@
       "color": "green",
       "size": "15",
       "price": "12500",
-      "status": "available",
+      "status": "unavailable",
       "description": "ad do labore nisi qui dolore Lorem sint tempor velit"
     },
     {
