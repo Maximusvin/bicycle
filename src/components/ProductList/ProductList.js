@@ -1,4 +1,6 @@
+import { useSelector } from 'react-redux';
 import { GoTriangleDown, GoX } from 'react-icons/go';
+import { getAllBicycles } from 'redux/bicycles/bicyclesSelector';
 
 import {
   Item,
@@ -14,107 +16,34 @@ import {
 } from './ProductList.style';
 
 const ProductList = () => {
+  const bicycles = useSelector(getAllBicycles);
+
   return (
     <ul>
-      <Item>
-        <ItemTopWrap>
-          <ProductName>Name</ProductName>-
-          <ProductType>Type (Color)</ProductType>
-        </ItemTopWrap>
-        <Id>ID: ХХХХХХХХХХХХХ</Id>
-        <ItemBottomWrap>
-          <ProductNameStatus>Status:</ProductNameStatus>
-          <ProductStatus>
-            Available
-            <GoTriangleDown />
-          </ProductStatus>
-          <Price>00.00 UAH/hr.</Price>
-        </ItemBottomWrap>
+      {bicycles &&
+        bicycles.map(({ id, name, type, color, status, price }) => (
+          <Item key={id}>
+            <ItemTopWrap>
+              <ProductName>{name}</ProductName>-
+              <ProductType>
+                {type} ({color})
+              </ProductType>
+            </ItemTopWrap>
+            <Id>ID: {id}</Id>
+            <ItemBottomWrap>
+              <ProductNameStatus>Status:</ProductNameStatus>
+              <ProductStatus>
+                {status}
+                <GoTriangleDown />
+              </ProductStatus>
+              <Price>{Number(price).toLocaleString()} UAH/hr.</Price>
+            </ItemBottomWrap>
 
-        <CloseButton>
-          <GoX />
-        </CloseButton>
-      </Item>
-
-      <Item>
-        <ItemTopWrap>
-          <ProductName>Name</ProductName>-
-          <ProductType>Type (Color)</ProductType>
-        </ItemTopWrap>
-        <Id>ID: ХХХХХХХХХХХХХ</Id>
-        <ItemBottomWrap>
-          <ProductNameStatus>Status:</ProductNameStatus>
-          <ProductStatus>
-            Available
-            <GoTriangleDown />
-          </ProductStatus>
-          <Price>00.00 UAH/hr.</Price>
-        </ItemBottomWrap>
-
-        <CloseButton>
-          <GoX />
-        </CloseButton>
-      </Item>
-
-      <Item>
-        <ItemTopWrap>
-          <ProductName>Name</ProductName>-
-          <ProductType>Type (Color)</ProductType>
-        </ItemTopWrap>
-        <Id>ID: ХХХХХХХХХХХХХ</Id>
-        <ItemBottomWrap>
-          <ProductNameStatus>Status:</ProductNameStatus>
-          <ProductStatus>
-            Available
-            <GoTriangleDown />
-          </ProductStatus>
-          <Price>00.00 UAH/hr.</Price>
-        </ItemBottomWrap>
-
-        <CloseButton>
-          <GoX />
-        </CloseButton>
-      </Item>
-
-      <Item>
-        <ItemTopWrap>
-          <ProductName>Name</ProductName>-
-          <ProductType>Type (Color)</ProductType>
-        </ItemTopWrap>
-        <Id>ID: ХХХХХХХХХХХХХ</Id>
-        <ItemBottomWrap>
-          <ProductNameStatus>Status:</ProductNameStatus>
-          <ProductStatus>
-            Available
-            <GoTriangleDown />
-          </ProductStatus>
-          <Price>00.00 UAH/hr.</Price>
-        </ItemBottomWrap>
-
-        <CloseButton>
-          <GoX />
-        </CloseButton>
-      </Item>
-
-      <Item>
-        <ItemTopWrap>
-          <ProductName>Name</ProductName>-
-          <ProductType>Type (Color)</ProductType>
-        </ItemTopWrap>
-        <Id>ID: ХХХХХХХХХХХХХ</Id>
-        <ItemBottomWrap>
-          <ProductNameStatus>Status:</ProductNameStatus>
-          <ProductStatus>
-            Available
-            <GoTriangleDown />
-          </ProductStatus>
-          <Price>00.00 UAH/hr.</Price>
-        </ItemBottomWrap>
-
-        <CloseButton>
-          <GoX />
-        </CloseButton>
-      </Item>
+            <CloseButton>
+              <GoX />
+            </CloseButton>
+          </Item>
+        ))}
     </ul>
   );
 };

@@ -1,8 +1,6 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 import { fetchBicycles } from './bicyclesOperations';
 
-console.log(fetchBicycles);
-
 const entities = createReducer([], {
   [fetchBicycles.fulfilled]: (_, { payload }) => payload,
 });
