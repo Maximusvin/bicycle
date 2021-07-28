@@ -4,3 +4,7 @@ export const changeStatusBicycle = createAction(
   'bicycle/changeStatusBicycle',
   (id, status) => ({ payload: { id, status } }),
 );
+
+export const deleteBicycle = createAction('bicycle/deleteBicycle', id => ({
+  payload: { id },
+}));
