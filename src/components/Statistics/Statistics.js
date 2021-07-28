@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { formatCurrency } from 'Functions';
 import {
   getAmountBicycles,
   getAverageBikeCost,
@@ -29,7 +30,7 @@ const Statistics = () => {
       <Line>
         Average bike cost:
         <Span>
-          {averageBikeCost ? averageBikeCost.toLocaleString() : '-'} UAH/hr.
+          {averageBikeCost ? formatCurrency(averageBikeCost) : '-'} UAH/hr.
         </Span>
       </Line>
     </Wrapper>
