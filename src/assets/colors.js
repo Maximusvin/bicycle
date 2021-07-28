@@ -9,5 +9,6 @@ export const COLORS = {
   lightBlack: '#333',
   green: '#6FCF97',
   orange: '#F2994A',
-  red: 'rgba(235, 87, 87, 0.5)',
+  red50: 'rgba(235, 87, 87, 0.5)',
+  red100: 'rgba(235, 87, 87, 1)',
 };

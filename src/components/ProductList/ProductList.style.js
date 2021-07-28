@@ -8,7 +8,7 @@ const getActiveColorByItem = activeStatus => {
     case 'busy':
       return COLORS.orange;
     case 'unavailable':
-      return COLORS.red;
+      return COLORS.red50;
     default:
       return;
   }

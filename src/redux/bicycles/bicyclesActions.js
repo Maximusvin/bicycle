@@ -8,3 +8,5 @@ export const changeStatusBicycle = createAction(
 export const deleteBicycle = createAction('bicycle/deleteBicycle', id => ({
   payload: { id },
 }));
+
+export const addBicycle = createAction('bicycle/addBicycle');
