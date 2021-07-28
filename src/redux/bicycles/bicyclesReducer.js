@@ -1,6 +1,10 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 import { fetchBicycles } from './bicyclesOperations';
-import { changeStatusBicycle, deleteBicycle } from './bicyclesActions';
+import {
+  changeStatusBicycle,
+  deleteBicycle,
+  addBicycle,
+} from './bicyclesActions';
 
 const entities = createReducer([], {
   [fetchBicycles.fulfilled]: (_, { payload }) => payload,
@@ -10,6 +14,9 @@ const entities = createReducer([], {
     ),
   [deleteBicycle]: (state, { payload }) =>
     state.filter(item => item.id !== payload.id),
+  [addBicycle]: (state, { payload }) => {
+    return [...state, payload];
+  },
 });
 
 const loading = createReducer(false, {

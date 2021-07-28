@@ -29,3 +29,7 @@ export const getAverageBikeCost = createSelector(
     );
   },
 );
+
+// export const isValidId = (store, id) => {
+//   return getAllBicycles(store).some(item => item.id === id);
+// };

@@ -9,12 +9,16 @@ export const FormWrap = styled.form`
   padding-right: 21.5px;
 `;
 
-export const InputForm = styled.input`
+export const InputWrap = styled.div`
   width: 49%;
+  margin-bottom: 10px;
+`;
+
+export const InputForm = styled.input`
+  width: 100%;
   padding: 5px 16px;
   background: ${COLORS.lightGrey};
   border-radius: 5px;
-  margin-bottom: 10px;
 
   &::placeholder {
     font-size: 12px;
@@ -29,7 +33,7 @@ export const TextareaForm = styled.textarea`
   height: 75px;
   background: ${COLORS.lightGrey};
   border-radius: 5px;
-  margin-bottom: 10px;
+
   outline: none;
   resize: none;
 
@@ -38,6 +42,16 @@ export const TextareaForm = styled.textarea`
     line-height: 19px;
     color: ${COLORS.liteGrey};
   }
+`;
+
+export const TextareaWrap = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: 12px;
+  color: ${COLORS.red100};
 `;
 
 export const Button = styled.button`
