@@ -1,2 +1,2 @@
 export const formatCurrency = value =>
-  value.toLocaleString('ru-RU', { style: 'currency', currency: 'UAH' });
+  value.toLocaleString('uk-UA', { maximumSignificantDigits: 2 });

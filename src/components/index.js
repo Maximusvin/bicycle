@@ -7,3 +7,4 @@ export { ProductForm } from './ProductForm';
 export { Statistics } from './Statistics';
 export { ProductList } from './ProductList';
 export { Skeleton } from './Skeleton';
+export { StatusPopap } from './StatusPopap';
