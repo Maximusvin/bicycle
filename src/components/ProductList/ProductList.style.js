@@ -103,3 +103,12 @@ export const CloseButton = styled.button`
     color: ${COLORS.red};
   }
 `;
+
+export const EmptyWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  line-height: 2;
+`;
