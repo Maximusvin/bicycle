@@ -78,6 +78,7 @@ export const Price = styled.p`
 `;
 
 export const CloseButton = styled.button`
+  opacity: ${props => (props.active === 'unavailable' ? '50%' : '100%')};
   position: absolute;
   background: transparent;
   margin-right: 3px;

@@ -14,12 +14,3 @@ export async function fetchBicycles() {
     return [];
   }
 }
-
-// export async function fetchProductDetails(productId) {
-//   try {
-//     const { data } = await axios.get(`${API_ENDPOINTS.PRODUCTS}/${productId}`);
-//     return data;
-//   } catch (error) {
-//     return [];
-//   }
-// }

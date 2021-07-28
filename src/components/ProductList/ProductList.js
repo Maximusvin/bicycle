@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { formatCurrency } from 'Functions';
 import { getAllBicycles } from 'redux/bicycles/bicyclesSelector';
@@ -17,11 +16,9 @@ import {
 } from './ProductList.style';
 
 const ProductItem = ({ id, name, type, color, status, price }) => {
-  const [activeItem, setActiveItem] = useState(status);
-
   return (
-    <Item active={activeItem}>
-      <ItemTopWrap active={activeItem}>
+    <Item active={status}>
+      <ItemTopWrap active={status}>
         <ProductName>{name}</ProductName>-
         <ProductType>
           {type} ({color})
@@ -33,18 +30,12 @@ const ProductItem = ({ id, name, type, color, status, price }) => {
       <ItemBottomWrap>
         <ProductNameStatus>Status:</ProductNameStatus>
 
-        <StatusPopap
-          status={status}
-          activeItem={activeItem}
-          setActiveItem={setActiveItem}
-        />
+        <StatusPopap activeStatus={status} id={id} />
 
-        <Price active={activeItem}>
-          {formatCurrency(Number(price))} UAH/hr.
-        </Price>
+        <Price active={status}>{formatCurrency(Number(price))} UAH/hr.</Price>
       </ItemBottomWrap>
 
-      <CloseButton>
+      <CloseButton active={status}>
         <GoX />
       </CloseButton>
     </Item>

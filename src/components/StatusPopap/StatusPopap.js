@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { GoTriangleDown } from 'react-icons/go';
+import { changeStatusBicycle } from 'redux/bicycles/bicyclesActions';
 import {
   PopapWrap,
   PopapActiveItem,
@@ -14,12 +16,13 @@ const statusList = [
   { type: 'unavailable' },
 ];
 
-const StatusPopap = ({ activeItem, setActiveItem }) => {
+const StatusPopap = ({ activeStatus, id }) => {
   const [showPopap, setShowPopap] = useState(false);
+  const dispatch = useDispatch();
   const popapRef = useRef();
 
   const activeLabelName = statusList.find(
-    item => item.type === activeItem,
+    item => item.type === activeStatus,
   ).type;
 
   const handleOutsideClick = e => {
@@ -40,7 +43,7 @@ const StatusPopap = ({ activeItem, setActiveItem }) => {
   }, []);
 
   const getActiveItem = type => {
-    setActiveItem(type);
+    dispatch(changeStatusBicycle(id, type));
     setShowPopap(!showPopap);
   };
 
@@ -70,7 +73,7 @@ const StatusPopap = ({ activeItem, setActiveItem }) => {
               <PopapItem
                 key={item.type + index}
                 onClick={() => getActiveItem(item.type)}
-                active={activeItem === item.type ? true : ''}
+                active={activeStatus === item.type ? true : ''}
               >
                 {item.type}
               </PopapItem>
