@@ -18,4 +18,9 @@ export const Logo = styled.h1`
   font-weight: 400;
   font-size: 24px;
   line-height: 38px;
+
+  @media (max-width: 576px) {
+    font-size: 22px;
+    text-align: center;
+  }
 `;

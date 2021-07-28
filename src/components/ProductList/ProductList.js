@@ -14,6 +14,7 @@ import {
   ProductNameStatus,
   CloseButton,
   Price,
+  StatusWrap,
 } from './ProductList.style';
 
 const ProductItem = ({ id, name, type, color, status, price }) => {
@@ -35,9 +36,11 @@ const ProductItem = ({ id, name, type, color, status, price }) => {
       <Id>ID: {id}</Id>
 
       <ItemBottomWrap>
-        <ProductNameStatus>Status:</ProductNameStatus>
+        <StatusWrap>
+          <ProductNameStatus>Status:</ProductNameStatus>
 
-        <StatusPopap activeStatus={status} id={id} />
+          <StatusPopap activeStatus={status} id={id} />
+        </StatusWrap>
 
         <Price active={status}>{formatCurrency(Number(price))} UAH/hr.</Price>
       </ItemBottomWrap>

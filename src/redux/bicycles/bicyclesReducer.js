@@ -15,7 +15,7 @@ const entities = createReducer([], {
   [deleteBicycle]: (state, { payload }) =>
     state.filter(item => item.id !== payload.id),
   [addBicycle]: (state, { payload }) => {
-    return [...state, payload];
+    return [payload, ...state];
   },
 });
 

@@ -5,12 +5,6 @@ export const PopapWrap = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-
-  @media (max-width: 576px) {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
 `;
 
 export const PopapActiveItem = styled.p`

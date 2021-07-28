@@ -60,8 +60,15 @@ export const Id = styled.p`
 export const ItemBottomWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 14px;
   line-height: 22px;
+`;
+
+export const StatusWrap = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const ProductNameStatus = styled.p`
@@ -74,7 +81,10 @@ export const Price = styled.p`
   font-size: 24px;
   color: ${COLORS.black};
   opacity: ${props => (props.active === 'unavailable' ? '50%' : '100%')};
-  margin-left: auto;
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+  }
 `;
 
 export const CloseButton = styled.button`
